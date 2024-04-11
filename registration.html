@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AdminAstro-Register</title>
+    <link rel="stylesheet" href="loginRegistration.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <form id="registrationForm">
+        <h1>Register</h1>
+        <div class="input-box">
+          <input
+            id="registerId"
+            type="text"
+            placeholder=" Create Login Id"
+            required
+          />
+          <i class="bx bxs-user"></i>
+        </div>
+        <div class="input-box">
+          <input
+            id="password"
+            type="password"
+            placeholder=" Create Password"
+            required
+          />
+          <i class="bx bxs-lock-alt"></i>
+        </div>
+        <div class="remember-forgot">
+          <label><input type="checkbox" />Remember Me</label>
+        </div>
+        <button type="submit" class="btn">Login</button>
+        <div class="register-link">
+          <p>Already have an account? <a href="login.html">Login</a></p>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      document
+        .getElementById("registrationForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const loginId = document.getElementById("registerId").value;
+          const password = document.getElementById("password").value;
+
+          const requestOptions = {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ loginId, password }),
+            redirect: "follow",
+          };
+
+          //todo update this url
+          fetch("http://127.0.0.1:3000/register", requestOptions)
+            .then(async (response) => {
+              if (response.status === 201) {
+                //todo update this url
+                window.location.replace("http://127.0.0.1:5501/home.html");
+              } else if (response.status === 400) {
+                console.log(
+                  "Registation failed. Please check your credentials."
+                );
+                const error = await response.text();
+                alert(JSON.parse(error).error);
+                return;
+              }
+            })
+            .catch((error) => console.error("An error occurred:", error.body));
+        });
+    </script>
+  </body>
+</html>
