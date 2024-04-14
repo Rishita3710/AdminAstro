@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Time Table</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        margin: 0;
+        padding: 0;
+      }
+
+      h1 {
+        text-align: center;
+        color: #343a40;
+      }
+
+      table {
+        border-collapse: collapse;
+        margin: 20px auto;
+        background-color: #fff;
+        border: 2px solid #dee2e6;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      th,
+      td {
+        border: 1px solid #dee2e6;
+        padding: 10px;
+        text-align: center;
+      }
+
+      th {
+        background-color: #f2f2f2;
+        color: #343a40;
+      }
+
+      .highlight {
+        background-color: #f8f9fa;
+      }
+
+      .special {
+        background-color: #f0f0f0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>TIME TABLE</h1>
+    <table>
+      <tr>
+        <th>Day/Period</th>
+        <th>I<br />8:00-8:50</th>
+        <th>II<br />8:50-9:40</th>
+        <th>III<br />9:40-10:30</th>
+        <th>IV<br />10:30-11:20</th>
+        <th>V<br />11:20-12:10</th>
+        <th>VI<br />12:10-1:00</th>
+        <th>VII<br />1:00-1:50</th>
+        <th>VIII<br />1:50-2:40</th>
+      </tr>
+      <tr>
+        <td class="highlight"><b>Monday</b></td>
+        <td>ML</td>
+        <td>QAPD</td>
+        <td colspan="2">CD lab</td>
+        <td rowspan="6" class="special"><b>LUNCH</b></td>
+        <td>IOT</td>
+        <td>CD</td>
+        <td>DM</td>
+      </tr>
+      <tr>
+        <td class="highlight"><b>Tuesday</b></td>
+        <td></td>
+        <td>ML</td>
+        <td>FL</td>
+        <td>IOT</td>
+        <td>DM</td>
+        <td>ML</td>
+      </tr>
+
+      <tr>
+        <td class="highlight"><b>Wednesday</b></td>
+        <td colspan="2">DM Lab</td>
+        <td>QAPD</td>
+        <td>FL</td>
+        <td>CD</td>
+        <td colspan="2">IOT Lab</td>
+      </tr>
+      <tr>
+        <td class="highlight"><b>Thrusday</b></td>
+        <td>DM</td>
+        <td>QAPD</td>
+        <td colspan="2">PP lab</td>
+        <td>ML</td>
+        <td>QAPD</td>
+      </tr>
+      <tr>
+        <td class="highlight"><b>Friday</b></td>
+        <td>IOT tut</td>
+        <td>IOT</td>
+        <td colspan="2">ML lab</td>
+        <td>QAPD</td>
+        <td>QAPD</td>
+        <td>CD</td>
+      </tr>
+    </table>
+  </body>
+</html>
